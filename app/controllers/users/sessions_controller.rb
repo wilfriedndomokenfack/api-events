@@ -12,6 +12,21 @@ class Users::SessionsController < Devise::SessionsController
   # def create
   #   super
   # end
+  def create
+    user = User.find_by_email(user_credentials["email"]) # user_credentials is implemented in application controller
+    if user && user.valid_password?(user_credentials["password"])
+      if user.email_confirmed?
+        token = user.generate_jwt
+        render json: {message: token, flag: 1}
+      else
+        mesg = "Deve confermare il suo indirizzo email prima di continuare"
+        render json: {message: mesg, flag: 2}
+      end
+    else
+      mesg = "E-mail non esistente o  password sbagliata"
+      render json: { message: mesg, flag: 3 }
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy
