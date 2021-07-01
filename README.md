@@ -6,19 +6,30 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-
+````
+2.7.1
+```
 * System dependencies
+```bash
+bundle
+```
 
 * Configuration
+```
+leggere in .exemple.env
+```
 
 * Database creation
+```bash
+rails db:create
+```
 
 * Database initialization
+```bash
+rails db:migrate
+```
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+rails test
+```
