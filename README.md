@@ -6,12 +6,12 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-````
-2.7.1
-```
+
+### 2.7.1
+
 * System dependencies
-```bash
-bundle
+```
+bundle install
 ```
 
 * Configuration
@@ -28,7 +28,10 @@ rails db:create
 ```bash
 rails db:migrate
 ```
-
+* How to run 
+```bash
+rails s
+```
 * How to run the test suite
 ```bash
 rails test
